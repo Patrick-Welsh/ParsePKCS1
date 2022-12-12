@@ -12,10 +12,10 @@ func main() {
 	fmt.Println("\nThis script decodes a PEM block from a generated RSA key in PKCS1 format, and then parses the key")
 
 	fmt.Println("\nReading RSA key from file....")
-	pubPEMData, _ := os.ReadFile("rsa")
+	rsaPPK, _ := os.ReadFile("rsa")
 
 	fmt.Println("\nDecoding PEM block....")
-	keyPem, _ := pem.Decode(pubPEMData)
+	keyPem, _ := pem.Decode(rsaPPK)
 	key, err := x509.ParsePKCS1PrivateKey(keyPem.Bytes)
 
 	if err != nil {
