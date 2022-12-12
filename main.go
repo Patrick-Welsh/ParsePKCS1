@@ -21,3 +21,6 @@ func main() {
 	if err != nil {
 		fmt.Println("Could not parse RSA private key")
 	}
+
+	fmt.Println("\nParsed PKCS1 key:", key)
+}
